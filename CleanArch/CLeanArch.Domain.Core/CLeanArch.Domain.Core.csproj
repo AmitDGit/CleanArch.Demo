@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandler\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CLeanArch.Domain.Core\CLeanArch.Domain.Core.csproj" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
