@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandler\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CLeanArch.Domain.Core\CLeanArch.Domain.Core.csproj" />
   </ItemGroup>
 
