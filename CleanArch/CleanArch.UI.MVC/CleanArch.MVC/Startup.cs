@@ -17,6 +17,7 @@ using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IOC;
 using MediatR;
 using CleanArch.MVC.Configurations;
+using CleanArch.Infra.Data.Dapper;
 
 namespace CleanArch.MVC
 {
@@ -52,6 +53,8 @@ namespace CleanArch.MVC
             );
 
 
+            //add configurations to class
+            services.Configure<CleanArchConfigurations>(Configuration.GetSection("ConnectionStrings"));
             
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

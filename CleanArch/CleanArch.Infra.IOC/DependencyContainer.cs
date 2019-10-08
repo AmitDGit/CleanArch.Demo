@@ -5,6 +5,7 @@ using CleanArch.Domain.Commands;
 using CleanArch.Domain.Interfaces;
 using CleanArch.Infra.Bus;
 using CleanArch.Infra.Data.Context;
+using CleanArch.Infra.Data.Dapper;
 using CleanArch.Infra.Data.Repository;
 using CLeanArch.Domain.Core.Bus;
 using MediatR;
@@ -24,7 +25,8 @@ namespace CleanArch.Infra.IOC
             serviceCollection.AddScoped<ICourseService, CourseService>();
 
             //Infra Layer
-            serviceCollection.AddScoped<ICourseRepository, CourseRepository>();
+            //serviceCollection.AddScoped<ICourseRepository, CourseRepository>();
+            serviceCollection.AddScoped<ICourseRepository, CourseRespositoryDapper>();
 
             //Domain In Memory Bus MediatR
             serviceCollection.AddScoped<IMediatorHandler, InMemoryBus>();
@@ -33,6 +35,7 @@ namespace CleanArch.Infra.IOC
             serviceCollection.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
 
             serviceCollection.AddScoped<UniversityDBContext>();
+            serviceCollection.AddScoped<DBConnectionFactory>();
         }
     }
 }

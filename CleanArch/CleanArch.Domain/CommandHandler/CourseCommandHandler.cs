@@ -2,9 +2,6 @@
 using CleanArch.Domain.Interfaces;
 using CleanArch.Domain.Models;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,7 +22,7 @@ namespace CleanArch.Domain.CommandHandler
             var course = new Course()
             {
                 Name = request.Name,
-                Description=request.Description,
+                Description = request.Description,
                 ImageURL = request.ImageURL
             };
 

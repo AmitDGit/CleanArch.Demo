@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CleanArch.Api.Configurations;
 using CleanArch.Infra.Data.Context;
+using CleanArch.Infra.Data.Dapper;
 using CleanArch.Infra.IOC;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -42,6 +43,9 @@ namespace CleanArch.Api
             });
 
             services.AddMediatR(typeof(Startup));
+
+
+            services.Configure<CleanArchConfigurations>(Configuration.GetSection("ConnectionStrings"));
 
             services.RegisterAutoMapper();
 
