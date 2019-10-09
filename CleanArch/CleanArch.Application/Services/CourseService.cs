@@ -33,6 +33,8 @@ namespace CleanArch.Application.Services
             //    );
 
             _bus.SendCommand(_autoMapper.Map<CreateCourseCommand>(coursesViewModel));
+
+            
             
         }
 

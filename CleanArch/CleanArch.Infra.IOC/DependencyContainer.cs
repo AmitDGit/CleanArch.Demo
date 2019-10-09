@@ -3,6 +3,7 @@ using CleanArch.Application.Services;
 using CleanArch.Domain.CommandHandler;
 using CleanArch.Domain.Commands;
 using CleanArch.Domain.Interfaces;
+using CleanArch.Domain.Query;
 using CleanArch.Infra.Bus;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.Data.Dapper;
@@ -36,6 +37,11 @@ namespace CleanArch.Infra.IOC
 
             serviceCollection.AddScoped<UniversityDBContext>();
             serviceCollection.AddScoped<DBConnectionFactory>();
+            
+
+            serviceCollection.AddScoped<IRequestHandler<GelAllCoursesQuery, CourseViewModel>, GetAllCoursesHandler>();
+            serviceCollection.AddScoped<IUniversityDbContext, UniversityDbContextDapper>();
+
         }
     }
 }
